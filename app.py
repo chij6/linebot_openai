@@ -59,6 +59,7 @@ def handle_message(event):
         GPT_answer = GPT_response(msg)
         print(GPT_answer)
         line_bot_api.reply_message(event.reply_token, TextSendMessage(GPT_answer))
+        print("Responded by the GPT-3.5-Turbo AI robot. [Warning : AI responses cannot replace any professional medical advice or diagnosis.]")
     except:
         print(traceback.format_exc())
         line_bot_api.reply_message(event.reply_token, TextSendMessage('你所使用的OPENAI API key額度可能已經超過，請於後台Log內確認錯誤訊息'))
